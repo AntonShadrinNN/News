@@ -38,7 +38,12 @@ class NewsViewModel : ViewModel() {
                         }
                         NewsItem(news.title, truncatedDescription ?: "", news.link)
                     }
-                    _newsLiveData.postValue(simplifiedList)
+                    if (simplifiedList.isEmpty()) {
+                        val emp = listOf(NewsItem("Sorry", "We have no news for you", "https://google.com"))
+                        _newsLiveData.postValue(emp)
+                    } else {
+                        _newsLiveData.postValue(simplifiedList)
+                    }
                 } else {
                     Log.e("NewsViewModel", "Error: ${response.status}")
                 }
