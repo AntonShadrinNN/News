@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">News</string>
+    <string name="search_news">Search news</string>
+    <string name="query">Enter your query</string>
+    <string name="search">Search</string>
+    <string name="source_read">Read on source…</string>
+    <string name="title">Title</string>
+    <string name="body">Body</string>
+</resources>
