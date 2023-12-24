@@ -2,6 +2,9 @@ package com.hse.news.network
 
 import com.hse.news.network.representation.NewsApiResponse
 
+/**
+ * Class representing "Repository" pattern
+ */
 class NewsRepository {
 
     suspend fun getNews(query: String): NewsApiResponse {

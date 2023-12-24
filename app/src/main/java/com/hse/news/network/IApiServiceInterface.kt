@@ -4,6 +4,9 @@ import com.hse.news.network.representation.NewsApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+/**
+ * Api Service interface
+ */
 interface IApiServiceInterface {
 
     @GET("news")

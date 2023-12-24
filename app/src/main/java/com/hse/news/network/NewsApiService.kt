@@ -5,10 +5,16 @@ import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+/**
+ * Creates API service with given API url
+ */
 object NewsApiService {
 
     private const val API = "https://newsdata.io/api/1/"
 
+    /**
+     * Returns Api service according to constraint
+     */
     fun create(): IApiServiceInterface {
         val client = OkHttpClient.Builder()
             .addInterceptor { chain ->
@@ -27,6 +33,10 @@ object NewsApiService {
         return retrofit.create(IApiServiceInterface::class.java)
     }
 
+    /**
+     * @param req Original request
+     * @return New request
+     */
     private fun generateRequest(req: Request): Request {
         return req.newBuilder()
             .header("Content-Type", "application/json")

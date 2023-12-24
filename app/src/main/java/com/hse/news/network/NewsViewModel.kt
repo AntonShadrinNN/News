@@ -9,6 +9,9 @@ import com.hse.news.network.representation.NewsItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * Class for "ViewModel" pattern
+ */
 class NewsViewModel : ViewModel() {
 
     private val newsRepository = NewsRepository()
@@ -16,6 +19,10 @@ class NewsViewModel : ViewModel() {
     private val _newsLiveData = MutableLiveData<List<NewsItem>>()
     val newsLiveData: LiveData<List<NewsItem>> get() = _newsLiveData
 
+    /**
+     * Updates recycle view after doing query-request
+     * @param query Query-request to api with keywords
+     */
     fun getNews(query: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
